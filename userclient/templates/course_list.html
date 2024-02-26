@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>列表</title>
+    <link rel="stylesheet" href="../static/bootstrap-3.4.1/css/bootstrap.css">
+</head>
+<body>
+<div style="margin: 10px 0;">
+    <a href="/course/add/" class="btn btn-success">添加</a>
+    <a class="btn btn-info">导入</a>
+    <a class="btn btn-warning">导出</a>
+</div>
+<div class="bs-example" data-example-id="bordered-table">
+
+    <table style="margin: 50px auto" class="table table-bordered">
+        <h1> 课程列表 </h1>
+        <thead>
+        <tr>
+            <th>课程代码</th>
+            <th>课程名称</th>
+            <th>学分</th>
+            <th>总课时</th>
+            <th>课程类别</th>
+            <th>课程属性</th>
+            <th>所属学期</th>
+            <th>操作</th>
+
+        </tr>
+        </thead>
+
+        <tbody>
+        {% for obj in data_list %}
+            <tr>
+                <td>{{ obj.course_id }}</td>
+                <td>{{ obj.courseName }}</td>
+                <td>{{ obj.credit }}</td>
+                <td>{{ obj.hours }}</td>
+                <td>{{ obj.classifier }}</td>
+                <td>{{ obj.attribute }}</td>
+                <td>{{ obj.semester }}</td>
+            <td>
+                编辑
+                <a><span class="glyphicon glyphicon-edit btn-primary btn-xs" aria-hidden="true"></span></a>
+                删除
+                <a><span class="glyphicon glyphicon-trash btn-danger btn-xs" aria-hidden="true"></span></a>
+            </td>
+
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+</div>
+
+	<!-- jQuery：在网址https://code.jquery.com/jquery-3.7.1.min.js中复制出代码并粘贴在项目中 -->
+    <script src="../static/bootstrap-3.4.1/js/jQuery.js"></script>
+    <!-- bootstrap.js：底端里写入下载好的bootstrap中js脚本，并引用 -->
+    <script src="../static/bootstrap-3.4.1/js/bootstrap.js"></script>
+
+</body>
+</html>

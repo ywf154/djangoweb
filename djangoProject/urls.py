@@ -17,6 +17,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from userclient import views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('login/', views.login),
+    path('layout/', views.layout),
+    path('course/list/', views.course_list),
+    path('vfor/', views.vfor),
+    path('course/add/', views.course_add),
 ]
